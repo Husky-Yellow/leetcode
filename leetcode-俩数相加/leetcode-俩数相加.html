@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /**
+     * @param {number[]} nums
+     * @param {number} target
+     * @return {number[]}
+     */
+        var twoSum = function (nums, target) {
+            var result = []
+            var lastNum
+            for (let i = 0; i <= nums.length; i++) {
+                if (result.length >= 2) break // 添加退出条件
+                lastNum = target - nums[i]
+                if (nums.includes(lastNum)) {
+                    for (let j = 0; j <= nums.length; j++) {
+                        if (result.length >= 2) break　// 添加退出条件
+                        if (nums[j] === lastNum && j !== i) {
+                            result.push(i)
+                            result.push(j)
+                        }
+                    }
+                }
+            }
+            return result
+        };
+        twoSum([2, 7, 11, 15], 9);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
