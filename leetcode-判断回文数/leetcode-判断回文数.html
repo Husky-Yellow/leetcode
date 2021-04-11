@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function isPalindrome(x: number): boolean {
+    // 负数一定不是回文
+    if (x < 0) return false;
+    const num = Number(Array.from(String(x)).reverse().join(''));
+    return num === x;
+};
+function isPalindrome(x: number): boolean {
+    if(x < 0) return false;
+    if(x == 0) return true;
+    let n = 0, y = x;
+    while(x > 0) {
+        // 从最后一位向前移
+        n = (n * 10) + (x % 10);
+        // 取整
+        x = ~~(x / 10);
+    }
+    return n === y
+}
+
+function isPalindrome(x: number): boolean {
+  if (x < 0) return false;
+  const s = x.toString();
+  let b = 0, e = s.length - 1;
+  while (b < e) {
+    if (s[b] !== s[e]) return false;
+    ++b, --e;
+  }
+  return true;
+}
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
